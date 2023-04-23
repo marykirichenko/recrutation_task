@@ -21,7 +21,7 @@ FOR theme-lib.message-list
 
 1. Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number). Done
 
-2. Change the name of class for solved threads (choose your own name)
+2. Change the name of class for solved threads (choose your own name). Done
 
 3. Add additional sorting methods to the post list and add it to the dropdown menu. Done
 -Post time, from the newest to oldest

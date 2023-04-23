@@ -8,14 +8,7 @@
  
 <#-- page size -->
 <#assign pageSize = 30/>
-<#-- instead of this <#assign pageSize = coreNode.settings.name.get("layout.messages_per_page_linear", "10")?number />  i set a fixed number 30-->
-<#if user.registered>
-   <#assign pageSizeUser = settings.name.get("layout.messages_per_page_linear") />
-   <#if pageSizeUser?number != pageSize?number>
-       <#assign pageSize = pageSizeUser />
-   </#if>
-</#if>
- 
+
 <#if webuisupport.path.parameters.name.get("label-name")??>
    <#assign label = webuisupport.path.parameters.name.get("label-name").getText() />
    <#assign label_query = " AND labels.text='"+label+"' " />
@@ -33,8 +26,8 @@
 <#-- build base queries -->
 <#assign baseQry = "SELECT id, subject, body, metrics.views, tags, labels, images, post_time, post_time_friendly, conversation.last_post_time, moderation_status, conversation.last_post_time_friendly, author.login, author.avatar.message, view_href, author.view_href, read_only, author.rank.name, author.rank.color, author.rank.icon_left, author.rank.bold, author.rank.icon_right, author.online_status,board.id, author.avatar.profile, board.view_href, board.title, replies.count(*), kudos.sum(weight), conversation.solved, user_context.read FROM messages WHERE depth = 0 AND board.id = '${coreNode.id}' " />
 <#assign basePagingQry = "SELECT count(*) FROM messages WHERE depth = 0 AND board.id = '${coreNode.id}' " />
+
 <#assign whereClause = label_query />
- 
 <#switch sorting>
    <#case "kudos">
        <#assign orderClause = "ORDER BY kudos.sum(weight) DESC " />
@@ -47,6 +40,8 @@
    <#break>
 
    <#--additional sorting methods-->
+
+ <#-- as i see in the above code, we use the orderClause in qry, which also contains baseQry. in this string WHERE clause already exists, so i will just add additional ADD params to whereClause -->
    <#case "postTime">
        <#assign orderClause = "ORDER BY post_time DESC " />
    <#break>
@@ -54,7 +49,7 @@
        <#assign orderClause = "ORDER BY kudos.sum(weight) ASC " />
    <#break>
    <#case "unanswered">
-       <#assign whereClause = "WHERE replies.count(*) = 0" />
+       <#assign whereClause += "AND replies.count(*) = 0" />
        <#assign orderClause = "ORDER BY post_time DESC" />
    <#break>
    <#case "noSolution">
@@ -64,7 +59,7 @@
 <#-- also we can get rid of solved conversations'-->
 <#--
     <#case "noSolution">
-        <#assign whereClause = "WHERE conversation.solved = false"
+        <#assign whereClause += "AND conversation.solved = false"
         <#assign orderClause = "ORDER BY conversation.last_post_time DESC "/>
     <#break>
 -->
@@ -156,6 +151,7 @@
  
 <#-- render message tile in message list -->
 <#macro renderMessage msg showBoard=true isOdd=false isFirst=false isLast=false isFloated=false>
+<#-- solved will contain the name of class for solved threads-->
    <#assign solved = "" />
    <#assign unread = "" />
    <#assign floated = "" />
@@ -177,9 +173,12 @@
        <#assign msg_status_icon = "custom-thread-floated" />
        <#assign msg_status_txt = "theme-lib.general.thread-floated" />
    </#if>
+   <#--Task 2. -->
    <#if msg.conversation.solved>
-       <#assign solved = "custom-thread-solved" />
-       <#assign msg_status_icon = "custom-thread-solved" />
+   <#-- assigning the value to solved -->
+       <#assign solved = "mariia-thread-solved" />
+       <#-- depends on the context, but i think i also need to change a msg_status_icon value, since it has the same value as solved -->
+       <#assign msg_status_icon = "mariia-thread-solved" />
        <#assign msg_status_txt = "theme-lib.general.thread-solved" />
    </#if>
    <#if !msg.user_context.read>
