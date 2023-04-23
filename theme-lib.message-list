@@ -61,7 +61,7 @@
         <#assign orderClause = "ORDER BY conversation.solved ASC " />
    <#break>
 
-<#--  also we can get rid of solved conversations'-->
+<#-- also we can get rid of solved conversations'-->
 <#--
     <#case "noSolution">
         <#assign whereClause = "WHERE conversation.solved = false"
