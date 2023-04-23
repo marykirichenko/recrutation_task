@@ -1,697 +1,714 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Register - Dynatrace Community</title>
-
-<style>
-
-.register-wrapper {
-    background: url(https://community.dynatrace.com/html/assets/wave-white.svg), url(https://community.dynatrace.com/html/assets/fullwave-purple-opt1@3x.jpg);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100% 20%, 100% 95%;
-    background-position-y: bottom, top !important;
-   display: flex;
-   margin-top: 0px;
-}
-
-.register-content {
-   padding: 14rem 0rem 10rem;
-   width: 100%;
-}
-
-.register-content-text-thin {
-   font-weight: 300;
-   font-size: 38px;
-   line-height: 44px;
-   text-align: center;
-   color: #FFFFFF;
-}
-
-.register-content-button {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-}
-
-.register-content-button-reg {
-   padding: 2rem 1rem;
-   width: 20%;
-}
-
-.register-content-button-reg > a {
-   width: -webkit-fill-available;
-   font-size: 20px;
-}
-
-/* Join page - benefits component */
-
-.benefits-wrapper {
-   display: flex;
-   margin-top: -15px;
-}
-
-
-.benefits-content, .join-content, .map-content, .join-dynamights-content, .cta-content, .testimonials-content {
-    text-align: center;
-    padding: 0px 20px 20px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
-
-.benefits-content {
-    box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
-    border-radius: 8px;
-    border: 0px;
-}
-
-
-.benefits-content-title, .join-dynamights-title, .cta-title, .testimonials-title, .map-content-title {
-   display: block;
-   text-align: center;
-   width: fit-content;
-   margin-left: auto;
-   margin-right: auto;
-}
-
-.benefits-content-title-light, .join-content-title, .map-content-title-light, .join-dynamights-title-light, .cta-title-light, .testimonials-title-light {
-   font-weight: 300;
-   font-size: 32px;
-   line-height: 54px;
-   text-align: center;
-   color: #000000;
-   width: fit-content;
-   margin-left: auto;
-   margin-right: auto;
-   padding-top: 20px;
-}
-
-.benefits-content-title-light > p, .join-content-title > p, .map-content-title-light > p, .join-dynamights-title-light > p, .cta-title-light > p, .testimonials-title-light > p {
-   margin-bottom: 0px;
-}
-
-.benefits-content-line {
-    background: #1496FF;
-    border: none;
-    position: relative;
-    bottom: 5px;
-    left: 0;
-    content: "";
-    display: inline-block;
-    height: 3px;
-    width: 80%;
-}
-
-.benefits-content-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.benefits-content-list-element {
-    width: calc(100% / 6);
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 20px 20px 30px 20px;
-    min-width: min-content;
-}
-
-.benefits-content-list-icon {
-    padding-bottom: 10px;
-}
-
-.benefits-content-list-icon > img {
-    height: 60px;
-}
-
-.benefits-content-list-description, .benefits-content-list-description-blue {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 22px;
-    text-align: center;
-}
-
-.benefits-content-list-description-blue {
-    font-weight: bold;
-}
-
-/* Join page - join component */
-
-.join-wrapper {
-   display: flex;
-}
-
-.join-content-text {
-   padding: 20px 0px 0px;
-}
-
-.join-content-text-cont {
-   display: flex;
-}
-
-.join-content-text-icon {
-    margin: auto;
-}
-
-.join-content-text-icon > img {
-    height: 60px;
-    padding-right: 20px;
-}
-
-.join-content-text-text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 34px;   
-    width: 85%;
-    text-align: left;
-    margin: auto;
-    padding: 10px 0px;
-}
-.join-content {
-    box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
-    border-radius: 8px;
-    border: 0px;
-}
-
-.join-content-button {
-    padding-top: 10px;
-}
-
-
-/*Join page - map component*/
-
-.map-wrapper {
-   display: flex;
-}
-
-.map-content-image {
-   padding: 0px 20px;
-   display: flex;
-   flex-direction: row;
-}
-
-.map-content-image > img {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.map-content-text {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   margin-top: 10px;
-   margin-bottom: 20px;
-}
-
-.map-content-text-1 {
-   width: calc(100% / 3 - 10px);
-   display: flex;
-   font-size: 20px;
-   line-height: 30px;
-   font-weight: 300;
-   justify-content: center;
-}
-
-/*Join page - Testimonials component*/
-
-.testimonials-wrapper {
-   display: flex;
-}
-
-.testimonials-content {
-    background: url(https://community.dynatrace.com/html/assets/fullwave-multicolor-opt1@3x.jpg);
-    border-radius: 8px;
-}
-
-.testimonials-title-light {
-    color: white;
-}
-
-#testimonials-carousel {
-   padding: 3rem 0rem;
-   margin-bottom: 5rem;
-}
-
-.testimonials-quote-wrap {
-   display: flex;
-   flex-direction: row;
-   padding: 10px 5px;
-   min-height: 355px;
-}
-
-.testimonials-quote-element {
-   display: flex;
-   flex-direction: column;
-   width: 70%;
-   padding: 30px 30px 20px 30px;
-   justify-content: center;
-   box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
-   border-radius: 8px;
-   border: 0px;
-   background: white;
-}
-
-.testimonials-quote {
-   font-weight: 300;
-   font-size: 20px;
-   line-height: 34px;
-   text-align: center;
-   display: grid;
-}
-
-.testimonial-quote-mark-1{
-   grid-area: 3 / 1;
-   margin-top: 10px;
-}
-
-.testimonial-quote-mark-2 {
-   grid-area: 1 / 5;
-   margin-top: -25px;
-}
-
-.testimonials-picture {
-   display: flex;
-   flex-direction: column; 
-   width: 30%;  
-}
-
-.testimonials-picture-avatar > img {
-   border-radius: 50%;
-   height: 170px;
-   margin-bottom: 10px;
-}
-
-.testimonials-picture-name {
-   color: white;
-}
-
-.testimonials-picture-name > h2 {
-   font-style: normal;
-   font-weight: 600;
-   font-size: 30px;
-   line-height: 41px;
-   text-align: center;
-}
-
-.testimonials-picture-name > p {
-   font-style: normal;
-   font-weight: normal;
-   font-size: 20px;
-   line-height: 27px;
-   text-align: center;
-}
-
-#testimonials-carousel > .carousel-indicators > li {
-    display: inline-block;
-    width: calc(100% / 4 - 50px);
-    height: 0.6rem;
-    margin: 20px;
-    text-indent: -999px;
-    cursor: pointer;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 0px;
-}
-
-#testimonials-carousel .carousel-indicators .active {
-    display: inline-block;
-    width: calc(100% / 4 - 50px);
-    height: 0.6rem;
-    margin: 20px;
-    text-indent: -999px;
-    cursor: pointer;
-    background: #02F2AA;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 0px;
-}
-
-#testimonials-carousel .carousel-control.right, #testimonials-carousel .carousel-control.left {
-    background-image: none;
-}
-
-#testimonials-carousel .carousel-indicators {
-    width: 100%;
-    bottom: -5rem;
-    left: 0%;
-    margin-left: 0%;
-}
-
-/*Join page - DynaMights component*/
-
-.join-dynamights-wrapper {
-   display: flex;
-}
-
-.join-dynamights-content-list {
-   display: flex;
-   flex-direction: row;
-   padding: 15px 0px;
-   justify-content: center;
-   column-gap: 4rem;
-   align-items: center;
-}
-
-
-.join-dynamights-content-button {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-}
-
-.join-dynamights-content-benefits {
-  text-align: left;
-  font-weight: 300;
-  font-size: 20px;
-  width: 50%;
-  padding-left: 10px;
-}
-
-.join-dynamights-content-ben-1 > p {
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-
-.join-dynamights-content-picture > img {
-  height: 300px;
-}
-
-.join-dynamights-content-button > a {
-  font-size: 20px;
-}
-
-.join-dynamights-content-ben-1 > ul {
-    padding-left: 40px;
-    list-style: circle;
-}
-
-
-/* Join page - CTA component */
-
-.cta-wrapper {
-   display: flex;
-   margin-top: 20px;
-}
-
-.cta-content {
-   box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
-   border-radius: 8px;
-   border: 0px;
-}
-
-.cta-list {
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   padding-top: 30px;
-   column-gap: 5rem;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-
-.cta-list-element {
-    width: calc(100% / 6);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    min-width: min-content;
-}
-
-.cta-list-element-icon {
-   padding: 10px 0px;
-}
-
-.cta-list-element-text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 34px;    
-    text-align: center;
-    margin: auto;
-    padding: 10px 0px;
-}
-
-.cta-list-element-button {
-    padding: 10px 0px;
-}
-
-.cta-list-element-button > a, .join-dynamights-content-button > a {
-    width: -webkit-fill-available;
-    font-size: 20px;    
-}
-
-
-/*Join - break */
-
-.join-break {
-    overflow: hidden;
-    margin: 40px 0;
-}
-
-.join-break > img {
-    width: 100%;
-    object-fit: fill;
-    height: 200px;
-}
-
-/* Buttons */
-
-.lia-button {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 26px;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    
-}
-
-.lia-button {
-    border-radius: 8px;
-    border: 0;
-    display: inline-block;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    min-width: 0 !important;
-    padding: 10px 32px;
-    transition: background-color 180ms ease, color 180ms ease, border 180ms ease;   
-}
-
-.lia-button:hover{
-
-        font-weight: 600;
-        text-decoration: none;
-}
-
-.lia-button-primary {
-    background: #1966FF;
-    border: 2px solid #1966FF;
-    color: #FFFFFF;
-}
-
-.lia-button-primary:hover {
-        background: #004BE0;
-        border: 2px solid #004BE0;
-        color: #FFFFFF;
-        text-decoration: none;
-}
-
-.lia-button-secondary {
-    background: #FFFFFF;
-    border: 2px solid #000000;
-    color: #000000;
-}    
-
-.lia-button-secondary:hover {
-        background: #000000;
-        border: 2px solid #000000; 
-        color: #FFFFFF;
-        font-weight: 600;
-        text-decoration: none;
-}
-
-.lia-button-third {
-    background: #FFFFFF;
-    border: 2px solid #FFFFFF; 
-    color: #000000;
-    
-}
-    
-.lia-button-third:hover {
-        background: #D6D6D6;
-        border: 2px solid #D6D6D6; 
-        color: #FFFFFF;
-        font-weight: 600;
-        text-decoration: none;
-        color: #000000;
-}
-
-.lia-button-forth {
-    background: none;
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-}    
-    
-.lia-button-forth:hover {
-        background: #FFFFFF;
-        border: 2px solid #FFFFFF;
-        color: #000000;
-        font-weight: 600;
-        text-decoration: none;
-}
-
-
-/*New link button*/
-
-.lia-button-link-new, .lia-button-link-new:focus {
-    border: none;
-    font-weight: 700;
-    border-radius: 0;
-    color: #fff;
-    position: relative;
-    font-size: 18px;
-    height: 52px;
-    line-height: 52px;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    display: inline-block;
-    padding: 0 35px;
-    overflow: hidden;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    padding-left: 0;
-    text-decoration: none;
-}
-
-a.lia-button-link-new.lia-button-link-new-blue, a.lia-button-link-new.lia-button-link-new-blue:focus {
-    color: #1966FF;
-    margin: 0px;
-    font-size: 14px;
-    height: 36px;
-    line-height: 36px;
-    text-decoration: none;
-}
-
-a.lia-button-link-new.lia-button-link-new-black, a.lia-button-link-new.lia-button-link-new-black:focus {
-    color: #000000;
-    margin: 0px;
-    font-size: 14px;
-    height: 36px;
-    line-height: 36px;
-    text-decoration: none;
-}
-
-.lia-button-link-new:before {
-    content: "";
-    display: block;
-    background-color: currentColor;
-    height: 2px;
-    position: absolute;
-    bottom: 7px;
-    opacity: .25;
-    width: calc(100% - 35px);
-    box-sizing: inherit;
-    transition: opacity .2s;
-}
-
-.lia-button-link-new:after {
-    content: "";
-    display: block;
-    background-color: currentColor;
-    height: 2px;
-    position: absolute;
-    bottom: 7px;
-    width: 0;
-    transition: width .2s;
-    box-sizing: inherit;
-}
-
-.lia-button-link-new-blue:before, .lia-button-link-new-blue:after, .lia-button-link-new-black:before, .lia-button-link-new-black:after {
-    bottom: 4px;
-}
-
-.lia-button-link-new:hover {
-    background-color: unset;
-    color: white;
-    text-decoration: none;
-}
-
-.lia-button-link-arrow {
-    display: inline-block;
-    content:url("https://community.dynatrace.com/html/assets/arrow-right-white.svg");
-    position: absolute;
-    overflow: visible;
-    top: 20px;
-    right: 8px;
-    transition: right .2s;
-    fill: white;
-    color: white;
-}
-
-span.lia-button-link-arrow.lia-button-link-arrow-blue {
-    content:url("https://community.dynatrace.com/html/assets/arrow-right.svg");
-    top: 12px;
-    right: 12px;
-    height: 8px;
-}
-
-span.lia-button-link-arrow.lia-button-link-arrow-black {
-    content:url("https://community.dynatrace.com/html/assets/arrow-right-black.svg");
-    top: 12px;
-    right: 12px;
-    height: 8px;
-}
-
-.lia-button-link-new:hover .lia-button-link-arrow {
-    right: 4px;
-}
-
-.lia-button-link-new-blue:hover .lia-button-link-arrow, .lia-button-link-new-black:hover .lia-button-link-arrow {
-    right: 8px;
-}
-
-.lia-button-link-new:hover:before {
-    opacity: 1;
-}
-
-
-
-
-</style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet preconnect" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet preconnect">
-
+  <title>Register - Dynatrace Community</title>
+
+  <style>
+
+    .register-wrapper {
+      background: url(https://community.dynatrace.com/html/assets/wave-white.svg), url(https://community.dynatrace.com/html/assets/fullwave-purple-opt1@3x.jpg);
+      background-repeat: no-repeat, no-repeat;
+      background-size: 100% 20%, 100% 95%;
+      background-position-y: bottom, top !important;
+      display: flex;
+      margin-top: 0px;
+    }
+
+    .register-content {
+      padding: 14rem 0rem 10rem;
+      width: 100%;
+    }
+
+    .register-content-text-thin {
+      font-weight: 300;
+      font-size: 38px;
+      line-height: 44px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .register-content-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .register-content-button-reg {
+      padding: 2rem 1rem;
+      width: 20%;
+    }
+
+    .register-content-button-reg > a {
+      width: -webkit-fill-available;
+      font-size: 20px;
+    }
+
+    /* Join page - benefits component */
+
+    .benefits-wrapper {
+      display: flex;
+      margin-top: -15px;
+    }
+
+
+    .benefits-content, .join-content, .map-content, .join-dynamights-content, .cta-content, .testimonials-content {
+      text-align: center;
+      padding: 0px 20px 20px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    .benefits-content {
+      box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
+      border-radius: 8px;
+      border: 0px;
+    }
+
+
+    .benefits-content-title, .join-dynamights-title, .cta-title, .testimonials-title, .map-content-title {
+      display: block;
+      text-align: center;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .benefits-content-title-light, .join-content-title, .map-content-title-light, .join-dynamights-title-light, .cta-title-light, .testimonials-title-light {
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 54px;
+      text-align: center;
+      color: #000000;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+    }
+
+    .benefits-content-title-light > p, .join-content-title > p, .map-content-title-light > p, .join-dynamights-title-light > p, .cta-title-light > p, .testimonials-title-light > p {
+      margin-bottom: 0px;
+    }
+
+    .benefits-content-line {
+      background: #1496FF;
+      border: none;
+      position: relative;
+      bottom: 5px;
+      left: 0;
+      content: "";
+      display: inline-block;
+      height: 3px;
+      width: 80%;
+    }
+
+    .benefits-content-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .benefits-content-list-element {
+      width: calc(100% / 6);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 20px 20px 30px 20px;
+      min-width: min-content;
+    }
+
+    .benefits-content-list-element img {
+      transition: transform 0.3s;
+    }
+
+    .benefits-content-list-element:hover img {
+      transform: scale(1.1);
+    }
+
+    .benefits-content-list-icon {
+      padding-bottom: 10px;
+    }
+
+    .benefits-content-list-icon > img {
+      height: 60px;
+    }
+
+    .benefits-content-list-description, .benefits-content-list-description-blue {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .benefits-content-list-description-blue {
+      font-weight: bold;
+    }
+
+    /* Join page - join component */
+
+    .join-wrapper {
+      display: flex;
+    }
+
+    .join-content-text {
+      padding: 20px 0px 0px;
+    }
+
+    .join-content-text-cont {
+      display: flex;
+    }
+
+    .join-content-text-icon {
+      margin: auto;
+    }
+
+    .join-content-text-icon > img {
+      height: 60px;
+      padding-right: 20px;
+    }
+
+    .join-content-text-text {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 34px;
+      width: 85%;
+      text-align: left;
+      margin: auto;
+      padding: 10px 0px;
+    }
+    .join-content {
+      box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
+      border-radius: 8px;
+      border: 0px;
+    }
+
+    .join-content-button {
+      padding-top: 10px;
+    }
+
+
+    /*Join page - map component*/
+
+    .map-wrapper {
+      display: flex;
+    }
+
+    .map-content-image {
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .map-content-image > img {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .map-content-text {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .map-content-text-1 {
+      width: calc(100% / 3 - 10px);
+      display: flex;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 300;
+      justify-content: center;
+    }
+
+    /*Join page - Testimonials component*/
+
+    .testimonials-wrapper {
+      display: flex;
+    }
+
+    .testimonials-content {
+      background: url(https://community.dynatrace.com/html/assets/fullwave-multicolor-opt1@3x.jpg);
+      border-radius: 8px;
+    }
+
+    .testimonials-title-light {
+      color: white;
+    }
+
+    #testimonials-carousel {
+      padding: 3rem 0rem;
+      margin-bottom: 5rem;
+    }
+
+    .testimonials-quote-wrap {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 5px;
+      min-height: 355px;
+    }
+
+    .testimonials-quote-element {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      padding: 30px 30px 20px 30px;
+      justify-content: center;
+      box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
+      border-radius: 8px;
+      border: 0px;
+      background: white;
+    }
+
+    .testimonials-quote {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: center;
+      display: grid;
+    }
+
+    .testimonial-quote-mark-1{
+      grid-area: 3 / 1;
+      margin-top: 10px;
+    }
+
+    .testimonial-quote-mark-2 {
+      grid-area: 1 / 5;
+      margin-top: -25px;
+    }
+
+    .testimonials-picture {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+    }
+
+    .testimonials-picture-avatar > img {
+      border-radius: 50%;
+      height: 170px;
+      margin-bottom: 10px;
+    }
+
+    .testimonials-picture-name {
+      color: white;
+    }
+
+    .testimonials-picture-name > h2 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 41px;
+      text-align: center;
+    }
+
+    .testimonials-picture-name > p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+    }
+
+    #testimonials-carousel > .carousel-indicators > li {
+      display: inline-block;
+      width: calc(100% / 5 - 50px);
+      height: 0.6rem;
+      margin: 20px;
+      text-indent: -999px;
+      cursor: pointer;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 0px;
+    }
+
+    #testimonials-carousel .carousel-indicators .active {
+      display: inline-block;
+      width: calc(100% / 5 - 50px);
+      height: 0.6rem;
+      margin: 20px;
+      text-indent: -999px;
+      cursor: pointer;
+      background: #02F2AA;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 0px;
+    }
+
+    #testimonials-carousel .carousel-control.right, #testimonials-carousel .carousel-control.left {
+      background-image: none;
+    }
+
+    #testimonials-carousel .carousel-indicators {
+      width: 100%;
+      bottom: -5rem;
+      left: 0%;
+      margin-left: 0%;
+    }
+
+    /*Join page - DynaMights component*/
+
+    .join-dynamights-wrapper {
+      display: flex;
+    }
+
+    .join-dynamights-content-list {
+      display: flex;
+      flex-direction: row;
+      padding: 15px 0px;
+      justify-content: center;
+      column-gap: 4rem;
+      align-items: center;
+    }
+
+
+    .join-dynamights-content-button {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+    }
+
+    .join-dynamights-content-benefits {
+      text-align: left;
+      font-weight: 300;
+      font-size: 20px;
+      width: 50%;
+      padding-left: 10px;
+    }
+
+    .join-dynamights-content-ben-1 > p {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .join-dynamights-content-picture > img {
+      height: 300px;
+    }
+
+    .join-dynamights-content-button > a {
+      font-size: 20px;
+    }
+
+    .join-dynamights-content-ben-1 > ul {
+      padding-left: 40px;
+      list-style: circle;
+    }
+
+
+    /* Join page - CTA component */
+
+    .cta-wrapper {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .cta-content {
+      box-shadow: 0px 4px 10px rgba(2, 9, 27, 0.15);
+      border-radius: 8px;
+      border: 0px;
+    }
+
+    .cta-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding-top: 30px;
+      column-gap: 5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-list-element {
+      width: calc(100% / 6);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      min-width: min-content;
+    }
+
+    .cta-list-element-icon {
+      padding: 10px 0px;
+    }
+
+    .cta-list-element-text {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 34px;
+      text-align: center;
+      margin: auto;
+      padding: 10px 0px;
+    }
+
+    .cta-list-element-button {
+      padding: 10px 0px;
+    }
+
+    .cta-list-element-button > a, .join-dynamights-content-button > a {
+      width: -webkit-fill-available;
+      font-size: 20px;
+    }
+
+
+    /*Join - break */
+
+    .join-break {
+      overflow: hidden;
+      margin: 40px 0;
+    }
+
+    .join-break > img {
+      width: 100%;
+      object-fit: fill;
+      height: 200px;
+    }
+
+    /* Buttons */
+
+    .lia-button {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      touch-action: manipulation;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 16px;
+      line-height: 26px;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+    }
+
+    .lia-button {
+      border-radius: 8px;
+      border: 0;
+      display: inline-block;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+      min-width: 0 !important;
+      padding: 10px 32px;
+      transition: background-color 180ms ease, color 180ms ease, border 180ms ease;
+    }
+
+    .lia-button:hover{
+
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lia-button-primary {
+      background: #1966FF;
+      border: 2px solid #1966FF;
+      color: #FFFFFF;
+    }
+
+    .lia-button-primary:hover {
+      background: #004BE0;
+      border: 2px solid #004BE0;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    .lia-button-secondary {
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      color: #000000;
+    }
+
+    .lia-button-secondary:hover {
+      background: #000000;
+      border: 2px solid #000000;
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .lia-button-third {
+      background: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      color: #000000;
+
+    }
+
+    .lia-button-third:hover {
+      background: #D6D6D6;
+      border: 2px solid #D6D6D6;
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .lia-button-forth {
+      background: none;
+      border: 2px solid #FFFFFF;
+      color: #FFFFFF;
+    }
+
+    .lia-button-forth:hover {
+      background: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      color: #000000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+
+    /*New link button*/
+
+    .lia-button-link-new, .lia-button-link-new:focus {
+      border: none;
+      font-weight: 700;
+      border-radius: 0;
+      color: #fff;
+      position: relative;
+      font-size: 18px;
+      height: 52px;
+      line-height: 52px;
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      padding: 0 35px;
+      overflow: hidden;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      padding-left: 0;
+      text-decoration: none;
+    }
+
+    a.lia-button-link-new.lia-button-link-new-blue, a.lia-button-link-new.lia-button-link-new-blue:focus {
+      color: #1966FF;
+      margin: 0px;
+      font-size: 14px;
+      height: 36px;
+      line-height: 36px;
+      text-decoration: none;
+    }
+
+    a.lia-button-link-new.lia-button-link-new-black, a.lia-button-link-new.lia-button-link-new-black:focus {
+      color: #000000;
+      margin: 0px;
+      font-size: 14px;
+      height: 36px;
+      line-height: 36px;
+      text-decoration: none;
+    }
+
+    .lia-button-link-new:before {
+      content: "";
+      display: block;
+      background-color: currentColor;
+      height: 2px;
+      position: absolute;
+      bottom: 7px;
+      opacity: .25;
+      width: calc(100% - 35px);
+      box-sizing: inherit;
+      transition: opacity .2s;
+    }
+
+    .lia-button-link-new:after {
+      content: "";
+      display: block;
+      background-color: currentColor;
+      height: 2px;
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      transition: width .2s;
+      box-sizing: inherit;
+    }
+
+    .lia-button-link-new-blue:before, .lia-button-link-new-blue:after, .lia-button-link-new-black:before, .lia-button-link-new-black:after {
+      bottom: 4px;
+    }
+
+    .lia-button-link-new:hover {
+      background-color: unset;
+      color: white;
+      text-decoration: none;
+    }
+
+    .lia-button-link-arrow {
+      display: inline-block;
+      content:url("https://community.dynatrace.com/html/assets/arrow-right-white.svg");
+      position: absolute;
+      overflow: visible;
+      top: 20px;
+      right: 8px;
+      transition: right .2s;
+      fill: white;
+      color: white;
+    }
+
+    span.lia-button-link-arrow.lia-button-link-arrow-blue {
+      content:url("https://community.dynatrace.com/html/assets/arrow-right.svg");
+      top: 12px;
+      right: 12px;
+      height: 8px;
+    }
+
+    span.lia-button-link-arrow.lia-button-link-arrow-black {
+      content:url("https://community.dynatrace.com/html/assets/arrow-right-black.svg");
+      top: 12px;
+      right: 12px;
+      height: 8px;
+    }
+
+    .lia-button-link-new:hover .lia-button-link-arrow {
+      right: 4px;
+    }
+
+    .lia-button-link-new-blue:hover .lia-button-link-arrow, .lia-button-link-new-black:hover .lia-button-link-arrow {
+      right: 8px;
+    }
+
+    .lia-button-link-new:hover:before {
+      opacity: 1;
+    }
+
+    @media (max-width: 900px){
+      .benefits-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .benefits-content-list-element {
+        width: calc(100% / 2);
+      }
+    }
+
+
+  </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet preconnect" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet preconnect">
 </head>
 <body>
-
 <div class="register-wrapper">
   <div class="register-content">
     <div class="register-content-text">
@@ -700,10 +717,10 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
     </div>
     <div class="register-content-button">
       <div class="register-content-button-reg">
-          <a class="lia-button lia-button-third" href="https://www.dynatrace.com/trial/new/" style="margin-left: 0px;">Register</a>
+        <a class="lia-button lia-button-third" href="https://www.dynatrace.com/trial/new/" style="margin-left: 0px;">Register</a>
       </div>
       <div class="register-content-button-reg">
-          <a class="lia-button lia-button-forth" href="/plugins/common/feature/oauth2sso_v2/sso_login_redirect" style="margin-left: 0px;">Log in</a>
+        <a class="lia-button lia-button-forth" href="/plugins/common/feature/oauth2sso_v2/sso_login_redirect" style="margin-left: 0px;">Log in</a>
       </div>
     </div>
   </div>
@@ -775,25 +792,25 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
       <p>How can I become a member?</p>
     </div>
     <div class="join-content-text">
-     <div class="join-content-text-cont">    
+      <div class="join-content-text-cont">
         <div class="join-content-text-icon">
           <img src="https://community.dynatrace.com/html/assets/Upgrade to Saas.svg"/>
         </div>
         <div class="join-content-text-text">
           <p style="margin: auto;">If you’re a <b>free trial user</b>, a <b>Dynatrace SaaS user</b>, or a <b>Dynatrace employee</b>, you get access to Community by default and can access all forums immediately.</p>
         </div>
-     </div>
-     <div class="join-content-text-cont">   
+      </div>
+      <div class="join-content-text-cont">
         <div class="join-content-text-icon">
           <img src="https://community.dynatrace.com/html/assets/Source.svg"/>
         </div>
         <div class="join-content-text-text">
           <p style="margin: auto;">If you’re a <b>Dynatrace Managed user</b>, the access to Community depends on the settings on the Managed cluster.<br>You can get access either automatically upon your first login to the Managed cluster or the invite must be sent manually by a cluster administrator.</p>
         </div>
-     </div>
-     <div class="join-content-button">
-      <a class="lia-button-link-new lia-button-link-new-blue" href="https://www.dynatrace.com/trial/new/" style="font-size: 18px;">Join the Community!<span class="lia-button-link-arrow lia-button-link-arrow-blue"></span></a>
-     </div>
+      </div>
+      <div class="join-content-button">
+        <a class="lia-button-link-new lia-button-link-new-blue" href="https://www.dynatrace.com/trial/new/" style="font-size: 18px;">Join the Community!<span class="lia-button-link-arrow lia-button-link-arrow-blue"></span></a>
+      </div>
     </div>
   </div>
 </div>
@@ -828,116 +845,138 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
 
 <div class="testimonials-wrapper">
   <div class="testimonials-content">
-   <div class="testimonials-title">
-     <div class="testimonials-title-light">
-       <p>Dynatrace Community <b>brings real value</b><p>
-     </div>
-   </div>
-<div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
-
-  <ol class="carousel-indicators">
-    <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#testimonials-carousel" data-slide-to="1"></li>
-    <li data-target="#testimonials-carousel" data-slide-to="2"></li>
-    <li data-target="#testimonials-carousel" data-slide-to="3"></li>
-  </ol>
-
-  <div class="carousel-inner">
-    <div class="item active">
-     <div class="testimonials-quote-wrap">
-      <div class="testimonials-quote-element">
-        <div class="testimonials-quote">
-          <p>The Community has such a plethora of knowledge inside thanks to its contributors and the atmosphere is very welcoming. You can ask any question you'd like, and within minutes you will have a reply either from a fellow community member or even a Dynatrace staff that checked out the community and will provide you with the best possible solution to your question.</p>
-          <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
-          <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
-        </div>
+    <div class="testimonials-title">
+      <div class="testimonials-title-light">
+        <p>Dynatrace Community <b>brings real value</b><p>
       </div>
-        <div class="testimonials-picture">
-          <div class="testimonials-picture-avatar">
-            <img src="https://community.dynatrace.com/html/assets/Chad - picure.jpg"></img>
-          </div>
-          <div class="testimonials-picture-name">
-            <h2>Chad Turner</h2>
-            <p>Senior Systems Engineer</p>
-          </div>
-        </div>
-     </div>
     </div>
+    <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
 
-    <div class="item">
-     <div class="testimonials-quote-wrap">
-      <div class="testimonials-quote-element">
-        <div class="testimonials-quote">
-          <p>I believe in knowledge sharing and I'm sure I don't know every possible technology and architecture, so I rely on the Community to be one of my main sources for knowledge and brainstorming.</p>
-          <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
-          <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+      <ol class="carousel-indicators">
+        <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#testimonials-carousel" data-slide-to="1"></li>
+        <li data-target="#testimonials-carousel" data-slide-to="2"></li>
+        <li data-target="#testimonials-carousel" data-slide-to="3"></li>
+        <li data-target="#testimonials-carousel" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="testimonials-quote-wrap">
+            <div class="testimonials-quote-element">
+              <div class="testimonials-quote">
+                <p>The Community has such a plethora of knowledge inside thanks to its contributors and the atmosphere is very welcoming. You can ask any question you'd like, and within minutes you will have a reply either from a fellow community member or even a Dynatrace staff that checked out the community and will provide you with the best possible solution to your question.</p>
+                <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+                <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+              </div>
+            </div>
+            <div class="testimonials-picture">
+              <div class="testimonials-picture-avatar">
+                <img src="https://community.dynatrace.com/html/assets/Chad - picure.jpg"></img>
+              </div>
+              <div class="testimonials-picture-name">
+                <h2>Chad Turner</h2>
+                <p>Senior Systems Engineer</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="item">
+          <div class="testimonials-quote-wrap">
+            <div class="testimonials-quote-element">
+              <div class="testimonials-quote">
+                <p>I believe in knowledge sharing and I'm sure I don't know every possible technology and architecture, so I rely on the Community to be one of my main sources for knowledge and brainstorming.</p>
+                <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+                <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+              </div>
+            </div>
+            <div class="testimonials-picture">
+              <div class="testimonials-picture-avatar">
+                <img src="https://dt-cdn.net/images/cmom-rpanel-200-8e22f78517.jpg"></img>
+              </div>
+              <div class="testimonials-picture-name">
+                <h2>Gil Givati</h2>
+                <p>Dynatrace Products manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="testimonials-quote-wrap">
+            <div class="testimonials-quote-element">
+              <div class="testimonials-quote">
+                <p>The Dynatrace community is fresh and full of people willing to help. It's always a good feeling when you post some finding, which saves a lot of time for other people. On the other hand, it's good to see that your needs for changed or new functionality are supported by other people.</p>
+                <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+                <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+              </div>
+            </div>
+            <div class="testimonials-picture">
+              <div class="testimonials-picture-avatar">
+                <img src="https://dt-cdn.net/images/cmom-nov-200-4a485e9d10.png"></img>
+              </div>
+              <div class="testimonials-picture-name">
+                <h2>Rastislav Danis</h2>
+                <p>Consultant / Team Leader</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="testimonials-quote-wrap">
+            <div class="testimonials-quote-element">
+              <div class="testimonials-quote">
+                <p>The Dynatrace Community is very active and interesting. The mutual help allow us to move forward more quickly, to have ideas, to find the answers to many questions or blocking points.</p>
+                <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+                <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+              </div>
+            </div>
+            <div class="testimonials-picture">
+              <div class="testimonials-picture-avatar">
+                <img src="https://dt-cdn.net/images/cmom-square-200-ef30e9c11c.png"></img>
+              </div>
+              <div class="testimonials-picture-name">
+                <h2>Latarasa Abdelmalek</h2>
+                <p>Monitoring and Performance Consultant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="testimonials-quote-wrap">
+            <div class="testimonials-quote-element">
+              <div class="testimonials-quote">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus vel libero condimentum vehicula. Fusce vehicula nunc sit amet.</p>
+                <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
+                <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
+              </div>
+            </div>
+            <div class="testimonials-picture">
+              <div class="testimonials-picture-avatar">
+                <img src="https://thumbs.dreamstime.com/b/gray-fluffy-cat-blue-eyes-shot-close-up-square-image-173304539.jpg"></img>
+              </div>
+              <div class="testimonials-picture-name">
+                <h2>Mariia Kyrychenko</h2>
+                <p>Student</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#testimonials-carousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#testimonials-carousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
       </div>
-        <div class="testimonials-picture">
-          <div class="testimonials-picture-avatar">
-            <img src="https://dt-cdn.net/images/cmom-rpanel-200-8e22f78517.jpg"></img>
-          </div>
-          <div class="testimonials-picture-name">
-            <h2>Gil Givati</h2>
-            <p>Dynatrace Products manager</p>
-          </div>
-        </div>
-     </div>
     </div>
-
-    <div class="item">
-     <div class="testimonials-quote-wrap">
-      <div class="testimonials-quote-element">
-        <div class="testimonials-quote">
-          <p>The Dynatrace community is fresh and full of people willing to help. It's always a good feeling when you post some finding, which saves a lot of time for other people. On the other hand, it's good to see that your needs for changed or new functionality are supported by other people.</p>
-          <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
-          <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
-        </div>
-      </div>
-        <div class="testimonials-picture">
-          <div class="testimonials-picture-avatar">
-            <img src="https://dt-cdn.net/images/cmom-nov-200-4a485e9d10.png"></img>
-          </div>
-          <div class="testimonials-picture-name">
-            <h2>Rastislav Danis</h2>
-            <p>Consultant / Team Leader</p>
-          </div>
-        </div>
-     </div>
-    </div>
-
-    <div class="item">
-     <div class="testimonials-quote-wrap">
-      <div class="testimonials-quote-element">
-        <div class="testimonials-quote">
-          <p>The Dynatrace Community is very active and interesting. The mutual help allow us to move forward more quickly, to have ideas, to find the answers to many questions or blocking points.</p>
-          <img class="testimonial-quote-mark-1" src="https://community.dynatrace.com/html/assets/quote_black.png">
-          <img class="testimonial-quote-mark-2" src="https://community.dynatrace.com/html/assets/quote_black.png">
-        </div>
-      </div>
-        <div class="testimonials-picture">
-          <div class="testimonials-picture-avatar">
-            <img src="https://dt-cdn.net/images/cmom-square-200-ef30e9c11c.png"></img>
-          </div>
-          <div class="testimonials-picture-name">
-            <h2>Latarasa Abdelmalek</h2>
-            <p>Monitoring and Performance Consultant</p>
-          </div>
-        </div>
-     </div>
-    </div>
-
-  <a class="left carousel-control" href="#testimonials-carousel" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#testimonials-carousel" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
-    </div>
-   </div>
   </div>
 </div>
 
@@ -1034,6 +1073,41 @@ span.lia-button-link-arrow.lia-button-link-arrow-black {
     </div>
   </div>
 </div>
+<script>
+  const mapElement = document.getElementsByClassName("map-content")[0]
+  const buttonDiv= document.createElement("div")
+  buttonDiv.className= "map-content-button"
+  buttonDiv.style.backgroundColor = "rgb(170,121,209)"
+  buttonDiv.style.width = "200px"
+  buttonDiv.style.height = "50px"
+  buttonDiv.style.margin = 'auto'
+  buttonDiv.style.borderRadius = "8px"
+  buttonDiv.style.fontWeight = "normal"
+  buttonDiv.style.display = "flex"
+  buttonDiv.style.justifyContent = "center"
+  buttonDiv.style.alignItems = "center"
+  buttonDiv.style.cursor = "pointer"
+  buttonDiv.style.cursor = "default"
+  buttonDiv.addEventListener('mouseover', function() {
+    buttonDiv.style.transition = "0.2s"
+    buttonDiv.style.backgroundColor = "rgb(88,35,233)"
+  });
+  buttonDiv.addEventListener('mouseout', function() {
+    buttonDiv.style.transition = "0.2s"
+    buttonDiv.style.backgroundColor = "rgb(170,121,209)"
 
+  });
+  const link = document.createElement("a");
+  link.href = "https://www.google.com/maps/place/Dynatrace+Polska/@54.3992731,18.5738151,17z/data=!4m6!3m5!1s0x46fd7528f4d428df:0x6af9edc74b6f5fa2!8m2!3d54.39927!4d18.57639!16s%2Fg%2F11b620zfdn"
+  link.target = "_blank"
+  link.innerText = "Find us on Google Maps"
+  link.style.color = "white"
+  link.style.color = "white"
+  link.style.textDecoration = "none"
+  link.style.cursor = "default"
+  buttonDiv.appendChild(link);
+  mapElement.appendChild(buttonDiv);
+
+</script>
 </body>
 </html>
