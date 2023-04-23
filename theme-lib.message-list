@@ -103,8 +103,8 @@
 
                    <option value="postTime" <#if sorting == 'postTime'>selected</#if>>${text.format("theme-lib.community-activity.postTime")}</option>
                    <option value="kudosLowest" <#if sorting == 'kudosLowest'>selected</#if>>${text.format("theme-lib.community-activity.kudosLowest")}</option>
-                   <option value="unanswered" <#if sorting == 'replies'>selected</#if>>${text.format("theme-lib.community-activity.unanswered")}</option>
-                   <option value="noSolution" <#if sorting == 'kudos'>selected</#if>>${text.format("theme-lib.community-activity.noSolution")}</option>
+                   <option value="unanswered" <#if sorting == 'unanswered'>selected</#if>>${text.format("theme-lib.community-activity.unanswered")}</option>
+                   <option value="noSolution" <#if sorting == 'noSolution'>selected</#if>>${text.format("theme-lib.community-activity.noSolution")}</option>
                </select>
                <#if page.interactionStyle=="idea">
                  <@component id="custom.idea.status.label" />
