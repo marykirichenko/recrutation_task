@@ -7,7 +7,8 @@
 <#assign sorting = http.request.parameters.name.get("sort", "") />
  
 <#-- page size -->
-<#assign pageSize = coreNode.settings.name.get("layout.messages_per_page_linear", "10")?number />
+<#assign pageSize = 30/>
+<#-- instead of this <#assign pageSize = coreNode.settings.name.get("layout.messages_per_page_linear", "10")?number />  i set a fixed number 30-->
 <#if user.registered>
    <#assign pageSizeUser = settings.name.get("layout.messages_per_page_linear") />
    <#if pageSizeUser?number != pageSize?number>
@@ -44,6 +45,29 @@
    <#case "replies">
        <#assign orderClause = "ORDER BY replies.count(*) DESC " />
    <#break>
+
+   <#--additional sorting methods-->
+   <#case "postTime">
+       <#assign orderClause = "ORDER BY post_time DESC " />
+   <#break>
+   <#case "kudosLowest">
+       <#assign orderClause = "ORDER BY kudos.sum(weight) ASC " />
+   <#break>
+   <#case "unanswered">
+       <#assign whereClause = "WHERE replies.count(*) = 0" />
+       <#assign orderClause = "ORDER BY post_time DESC" />
+   <#break>
+   <#case "noSolution">
+        <#assign orderClause = "ORDER BY conversation.solved ASC " />
+   <#break>
+
+<#--  also we can get rid of solved conversations'-->
+<#--
+    <#case "noSolution">
+        <#assign whereClause = "WHERE conversation.solved = false"
+        <#assign orderClause = "ORDER BY conversation.last_post_time DESC "/>
+    <#break>
+-->
    <#default>
        <#assign orderClause = "ORDER BY conversation.last_post_time DESC " />
    <#break>
@@ -76,6 +100,11 @@
                    <option value="views" <#if sorting == 'views'>selected</#if>>${text.format("theme-lib.community-activity.views")}</option>
                    <option value="replies" <#if sorting == 'replies'>selected</#if>>${text.format("theme-lib.community-activity.replies")}</option>
                    <option value="kudos" <#if sorting == 'kudos'>selected</#if>>${text.format("theme-lib.community-activity.kudos")}</option>
+
+                   <option value="postTime" <#if sorting == 'postTime'>selected</#if>>${text.format("theme-lib.community-activity.postTime")}</option>
+                   <option value="kudosLowest" <#if sorting == 'kudosLowest'>selected</#if>>${text.format("theme-lib.community-activity.kudosLowest")}</option>
+                   <option value="unanswered" <#if sorting == 'replies'>selected</#if>>${text.format("theme-lib.community-activity.unanswered")}</option>
+                   <option value="noSolution" <#if sorting == 'kudos'>selected</#if>>${text.format("theme-lib.community-activity.noSolution")}</option>
                </select>
                <#if page.interactionStyle=="idea">
                  <@component id="custom.idea.status.label" />

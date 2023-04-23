@@ -19,15 +19,15 @@ The knowledge of those technologies is not necessary to solve the problems. as t
 
 FOR theme-lib.message-list 
 
-1. Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number)
+1. Set up page size to exactly 30 posts per page (instead getting it from the other source, set the setting always to the specific number). Done
 
 2. Change the name of class for solved threads (choose your own name)
 
-3. Add additional sorting methods to the post list and add it to the dropdown menu
--Post time, from the newest to oldest 
--The lowest number of kudos 
+3. Add additional sorting methods to the post list and add it to the dropdown menu. Done
+-Post time, from the newest to oldest
+-The lowest number of kudos
 -Unanswered questions
--Questions with no solution 
+-Questions with no solution
 
 
 Create a fork out of this repositorium and send us a link to it.
